@@ -1,0 +1,18 @@
+{
+    "name": "nzm/amp-cache-url",
+    "description": "Composer package for generating AMP Cache URLs effortlessly.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Nzm\\AmpCacheUrl\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "WDev"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10"
+    }
+}
