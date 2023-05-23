@@ -31,7 +31,9 @@ WORKDIR /app
 COPY . /app
 
 # Install the project dependencies with Composer
-RUN composer install --no-scripts --no-autoloader --no-dev
+RUN composer install --no-interaction --no-suggest --optimize-autoloader
+
+ENV XDEBUG_MODE=coverage
 
 # Run PHPUnit tests
-CMD ["phpunit"]
+CMD ["phpunit", "--configuration", "phpunit.xml", "--coverage-text"]

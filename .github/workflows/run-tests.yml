@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build docker image
-        run: docker build -t phpunit .
+        run: docker build -t phpunit --no-cache .
 
       - name: Run tests
-        run: docker run --rm phpunit phpunit --configuration phpunit.xml --coverage-text
+        run: docker run --rm phpunit
