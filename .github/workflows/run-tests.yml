@@ -1,0 +1,23 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build docker image
+        run: docker build -t phpunit .
+
+      - name: Run tests
+        run: docker run --rm phpunit phpunit --configuration phpunit.xml --coverage-text
